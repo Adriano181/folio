@@ -1,0 +1,831 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Adriano181/folio/blob/main/Connexiones%20de%20SQl%20%20con%20pythhon%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ZxlJgTGLXi-i",
+        "outputId": "a4cfa61a-4b55-4110-c9b7-7b101a1c4296"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Longitud de un datos compuesto --len--\n",
+        "categorias=[\"Ventas\",\"Marketing\",\"Finanzas\",\"IT\"]\n",
+        "\n",
+        "print(len(categorias))"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Obetner elementos de una lista por su posicion\n",
+        "# Para extrer el elemento \"Marketing\"\n",
+        "print(categorias[1])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6kco1mpocYC1",
+        "outputId": "20f98c0d-f2b9-4c3a-e416-2712e2fac203"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Marketing\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Modificar el elemento \"Marketing\" por \"Otro\"\n",
+        "categorias[1]=\"Otro\"\n",
+        "print(categorias)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "H8laMtHOdFVO",
+        "outputId": "cd595d92-449d-47e3-d1f4-14a389a4cffa"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['Ventas', 'Otro', 'Finanzas', 'IT']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Reasigno \"Marketing\" en la posicion 1 de categorias\n",
+        "categorias[1]=\"Marketing\"\n",
+        "print(categorias)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DpvC0fuodc_G",
+        "outputId": "196de635-7d35-466d-e839-9a7da0906104"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "['Ventas', 'Marketing', 'Finanzas', 'IT']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Creando una tupla\n",
+        "categorias_tupla=(\"Ventas\",\"Marketing\",\"Finanzas\",\"IT\")"
+      ],
+      "metadata": {
+        "id": "eLj_nDMRdwI1"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(len(categorias_tupla))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uykwOjVDd6X-",
+        "outputId": "ee7dd7ef-ebef-4885-c564-b1cd1c3af4a8"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "4\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Tratar de modificar la tupla\n",
+        "categorias_tupla[1]=\"Otro\"\n",
+        "print(categorias_tupla)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 176
+        },
+        "id": "GCZOLdhWeCIk",
+        "outputId": "364e99a0-9605-4c1f-f52e-e2ef3226e5ac"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "error",
+          "ename": "TypeError",
+          "evalue": "'tuple' object does not support item assignment",
+          "traceback": [
+            "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+            "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+            "\u001b[0;32m/tmp/ipython-input-15-3198170479.py\u001b[0m in \u001b[0;36m<cell line: 0>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0;31m# Tratar de modificar la tupla\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 2\u001b[0;31m \u001b[0mcategorias_tupla\u001b[0m\u001b[0;34m[\u001b[0m\u001b[0;36m1\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m=\u001b[0m\u001b[0;34m\"Otro\"\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m\u001b[1;32m      3\u001b[0m \u001b[0mprint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mcategorias_tupla\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n",
+            "\u001b[0;31mTypeError\u001b[0m: 'tuple' object does not support item assignment"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Crear un diccionario\n",
+        "diccionario_categorias={\n",
+        "    \"Ventas\":[100,200,300,[400,800]],\n",
+        "    \"Marketing\":[200,400,600,800],\n",
+        "    \"Finanzas\":[300,600,900,1200],\n",
+        "    \"IT\":[400,800,1200,1600]\n",
+        "}\n",
+        "print(diccionario_categorias)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5xAXgffJeuJm",
+        "outputId": "b755e1b9-5dc5-47b7-d5ed-b770560eae15"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "{'Ventas': [100, 200, 300, [400, 800]], 'Marketing': [200, 400, 600, 800], 'Finanzas': [300, 600, 900, 1200], 'IT': [400, 800, 1200, 1600]}\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(diccionario_categorias[\"Ventas\"][3][0])"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "si3Ko1B3fnTa",
+        "outputId": "6a0f9931-348f-4c29-f4da-e50b7bc05b1a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "400\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=True\n",
+        "\n",
+        "print(type(a)) # Permite saber el tipo de dato que se esta trabajando"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9gazxMCx4LKP",
+        "outputId": "686fac7a-5b0b-4334-ae27-f40e6db4faae"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "<class 'bool'>\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Operaciones artimeticas"
+      ],
+      "metadata": {
+        "id": "631PNSY_7h-2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Suma\n",
+        "a=4\n",
+        "b=7\n",
+        "c=a+b\n",
+        "print(c)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qDlqTjOX5YWx",
+        "outputId": "eed4af98-61fd-417d-d11b-0cbdbf827cba"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "11\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Resta\n",
+        "d=4\n",
+        "e=7\n",
+        "f=d-e\n",
+        "print(f)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KzOBO-og5yCm",
+        "outputId": "5d27fa7e-adb9-41ce-b2a6-5a0a91c08568"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-3\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Multiplicacion\n",
+        "g=4\n",
+        "h=7\n",
+        "i=g*h\n",
+        "print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xTQxqq9a51TM",
+        "outputId": "8bb93ad2-9c6a-4a59-f307-d01862ba106a"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "28\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Division real\n",
+        "j=25\n",
+        "k=3\n",
+        "l=j/k\n",
+        "print(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p6X-68425-_i",
+        "outputId": "8a36fa5a-588e-412b-c922-496221b24b33"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "8.333333333333334\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Division entera\n",
+        "j=25\n",
+        "k=3\n",
+        "l=j//k\n",
+        "print(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oNwZ0o_J6oeq",
+        "outputId": "1468a27e-3225-4ca7-b6b0-76a60a655123"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "8\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Division residuo o del modulo\n",
+        "j=25\n",
+        "k=3\n",
+        "l=j%k\n",
+        "print(l)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "vKeVo8Od6xnJ",
+        "outputId": "42d7b959-1f03-458d-f8df-f5647739c254"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Potencia\n",
+        "m=25\n",
+        "n=3\n",
+        "o=m**n\n",
+        "print(o)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3L-swHCK7Nnf",
+        "outputId": "b1b15216-2a02-4758-df27-887beab4ae71"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "15625\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Comparadores"
+      ],
+      "metadata": {
+        "id": "VboWsRlK89z4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Mayor que o Mayor Igual que\n",
+        "z=5>=3\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YDaaaOM87eKB",
+        "outputId": "fdf54885-259a-427c-d0cb-0aa7bbc58868"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# menor que o menor Igual que\n",
+        "z=5<=8\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "oX6u7htY9yJ0",
+        "outputId": "45bc58bc-ed1e-4e96-8283-80e480576ed3"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Igual que\n",
+        "z=8==8\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dtXp4SfO96Ot",
+        "outputId": "7f089819-4b9c-4909-faad-5e041e83d8a7"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "True\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Diferente a\n",
+        "z=7!=7\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lm7owLdt-DMd",
+        "outputId": "826f5109-40e0-4f0f-c90c-5ec24131381f"
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Operadores logicos"
+      ],
+      "metadata": {
+        "id": "iOhrRT9q7nRF"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# AND - Y\n",
+        "z=(5==4) and (8!=7) and (8==8)\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K2Ei1yUf7qmR",
+        "outputId": "5451346b-7ca8-42b7-b9c3-721e829f13f5"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# OR - O\n",
+        "z=(5==4) or (8!=8) or (8<8)\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "iH0tshl27zYI",
+        "outputId": "4d79b8af-e3db-4a46-b543-c2ec603e733c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# NOT - NO\n",
+        "z=not(5>=4)\n",
+        "print(z)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QUaUdUy771Pt",
+        "outputId": "444ccc5b-3f74-449b-f7e3-111288cce94f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Condicionales"
+      ],
+      "metadata": {
+        "id": "I9GR-N1s_geB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Una unica condicion que el aspirante tenga mayor de 14 años\n",
+        "edad=int(input(\"Ingrese su edad: \"))\n",
+        "if edad>14:\n",
+        "  print(\"Es apto para realizar el curso de conducción\")\n",
+        "else:\n",
+        "  print(\"NO es apto para realizar el curso de conducción\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "2NXXFxRv_jcH",
+        "outputId": "a262ce89-4f77-46a3-bcbd-2d8ff5d42d48"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese su edad: 35\n",
+            "Es apto para realizar el curso de conducción\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# mas de una condicion -- Categorizar lso estratos socio economicos\n",
+        "#RESTRICCION -- Solo existen los estratos >=1\n",
+        "# Si estrato es 1-2-3 -- Pertenece al estrato bajo\n",
+        "# Si estrato es 4-5 -- Pertenece al estrato medio\n",
+        "# Si estrato es mayor a 5 -- Pertenece al estrato alto\n",
+        "estrato=int(input(\"Ingrese su estrato socioeconomico: \"))\n",
+        "if estrato<=3:\n",
+        "  print(\"Pertenece al estrato BAJO\")\n",
+        "elif estrato>3 and estrato<=5:\n",
+        "  print(\"Pertenece al estrato MEDIO\")\n",
+        "else:\n",
+        "  print(\"Pertenece al estrato ALTO\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i5f0mP_TDhBU",
+        "outputId": "27139684-ebdd-4c4b-bbea-e7a804efd086"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese su estrato socioeconomico: -8\n",
+            "Pertenece al estrato BAJO\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Ciclos"
+      ],
+      "metadata": {
+        "id": "EMK0rGhaFwC6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# While\n",
+        "num=7\n",
+        "while num>5:\n",
+        "  print(\"El numero es mayor a 5\")\n",
+        "  num=int(input(\"Ingrese un nuevo numero: \"))\n",
+        "\n",
+        "print(\"El ciclo de cerró, el numero ya no es mayor a 5\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xrBQbepZGOP6",
+        "outputId": "cf2b4995-f120-4afc-a1d1-939da57af46e"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "El numero es mayor a 5\n",
+            "Ingrese un nuevo numero: 10\n",
+            "El numero es mayor a 5\n",
+            "Ingrese un nuevo numero: 50\n",
+            "El numero es mayor a 5\n",
+            "Ingrese un nuevo numero: 2\n",
+            "El ciclo de cerró, el numero ya no es mayor a 5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# mas de una condicion -- Categorizar lso estratos socio economicos\n",
+        "# RESTRICCION -- El usuario ingrese un estrato socieconomico mayor o igual a 1\n",
+        "# Si estrato es 1-2-3 -- Pertenece al estrato bajo\n",
+        "# Si estrato es 4-5 -- Pertenece al estrato medio\n",
+        "# Si estrato es mayor a 5 -- Pertenece al estrato alto\n",
+        "estrato=int(input(\"Ingrese su estrato socioeconomico: \"))\n",
+        "intentos=0\n",
+        "while estrato<1 and intentos<3:\n",
+        "  estrato=int(input(\"ADVERTENCIA: El estrato debe ser mayor o igual a 1: \"))\n",
+        "  intentos=intentos+1\n",
+        "  print(\"Le quedan:\",3-intentos,\"intentos\") # Advertir al usuario los intentos que le quedan\n",
+        "\n",
+        "if intentos==3:\n",
+        "    print(\"Supero el limite de intentos, USUARIO BLOQUEADO\")\n",
+        "else:\n",
+        "  if estrato<=3:\n",
+        "    print(\"Pertenece al estrato BAJO\")\n",
+        "  elif estrato>3 and estrato<=5:\n",
+        "    print(\"Pertenece al estrato MEDIO\")\n",
+        "  else:\n",
+        "    print(\"Pertenece al estrato ALTO\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "BCiTuTdzHqfm",
+        "outputId": "a1765e61-e0f8-417f-dd40-73373b7cf314"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Ingrese su estrato socioeconomico: 0\n",
+            "ADVERTENCIA: El estrato debe ser mayor o igual a 1: 0\n",
+            "Le quedan: 2 intentos\n",
+            "ADVERTENCIA: El estrato debe ser mayor o igual a 1: 0\n",
+            "Le quedan: 1 intentos\n",
+            "ADVERTENCIA: El estrato debe ser mayor o igual a 1: 0\n",
+            "Le quedan: 0 intentos\n",
+            "Supero el limite de intentos, USUARIO BLOQUEADO\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
